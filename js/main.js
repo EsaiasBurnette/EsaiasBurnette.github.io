@@ -27,23 +27,16 @@ function SlideShow(n) {
   circles[slidePosition-1].className += " enable";
 } 
 
-function shareOnFacebook() {
-    var url = encodeURIComponent(window.location.href);
-    var shareUrl = "https://www.facebook.com/sharer.php?u=" + url;
-    window.open(shareUrl, '_blank');
-  }
-  
-  function shareOnTwitter() {
-    var url = encodeURIComponent(window.location.href);
-    var shareUrl = "https://twitter.com/intent/tweet?url=" + url;
-    window.open(shareUrl, '_blank');
-  }
-  
-  function shareOnLinkedIn() {
-    var url = encodeURIComponent(window.location.href);
-    var shareUrl = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
-    window.open(shareUrl, '_blank');
-  }
+// Shared Buttons
+  var siteUrl = window.location.href;
+  var siteTitle = document.title;
+  var siteName = "The Dominican Foodie"; // Replace with your site name
+  var siteHashtag = "theDominicanFoodie"; // Replace with your site hashtag
+
+  document.querySelector('#share-buttons .facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(siteUrl);
+  document.querySelector('#share-buttons .twitter').href = 'https://twitter.com/share?text=' + encodeURIComponent(siteTitle) + '&url=' + encodeURIComponent(siteUrl) + '&hashtags=' + encodeURIComponent(siteHashtag);
+  document.querySelector('#share-buttons .linkedin').href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(siteUrl) + '&title=' + encodeURIComponent(siteTitle) + '&source=' + encodeURIComponent(siteName);
+
 
   var isPlaying = false; // Create a variable to track the audio playback status
 
@@ -71,88 +64,3 @@ function shareOnFacebook() {
                 img3.src = 'img/pause.png'; // Change the image to show the pause icon
 			}
 		}
-
-
-        function addToWishList(item) {
-            // Get the wishlist element
-            const wishlist = document.getElementById("wishlist");
-          
-            // Check if the item already exists in the wishlist
-            const wishlistItems = wishlist.querySelectorAll("li");
-            for (let i = 0; i < wishlistItems.length; i++) {
-              if (wishlistItems[i].innerText === item) {
-                alert("This item is already in your wishlist!");
-                return;
-              }
-            }
-          
-            // Create a new list item for the wishlist
-            const listItem = document.createElement("li");
-            listItem.innerText = item;
-          
-            // Append the list item to the wishlist
-            wishlist.appendChild(listItem);
-          
-            // Save the wishlist items to localStorage
-            saveWishlistItems();
-          }
-          
-  
-  // Define the saveWishlistItems function
-  function saveWishlistItems() {
-    // Get the wishlist element and its child items
-    const wishlist = document.getElementById("wishlist");
-    const wishlistItems = wishlist.querySelectorAll("li");
-  
-    // Create an array of wishlist item names
-    const wishlistItemNames = [];
-    wishlistItems.forEach(item => wishlistItemNames.push(item.innerText));
-  
-    // Save the wishlist items to localStorage
-    localStorage.setItem("wishlistItems", JSON.stringify(wishlistItemNames));
-  }
-  
-  // Define the loadWishlistItems function
-  function loadWishlistItems() {
-    // Get the wishlist element and its localStorage items
-    const wishlist = document.getElementById("wishlist");
-    const storedItems = localStorage.getItem("wishlistItems");
-  
-    // If there are stored items, create a new list item for each one and append it to the wishlist
-    if (storedItems) {
-      const wishlistItems = JSON.parse(storedItems);
-      wishlistItems.forEach(item => {
-        const listItem = document.createElement("li");
-        listItem.innerText = item;
-        wishlist.appendChild(listItem);
-      });
-    }
-  }
-  
-  // Load the wishlist items on page load
-  loadWishlistItems();
-  
-  // Add an event listener to the form to prevent default behavior and call addToWishList function
-  const form = document.getElementById("wishlist-form");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const item = form.elements["item"].value.trim();
-    
-    // Check if the item is already in the wishlist
-    const wishlist = document.getElementById("wishlist");
-    const wishlistItems = wishlist.querySelectorAll("li");
-    let exists = false;
-    wishlistItems.forEach(wishlistItem => {
-      if (wishlistItem.innerText === item) {
-        exists = true;
-      }
-    });
-  
-    // If the item does not already exist, add it to the wishlist and reset the form input
-    if (!exists) {
-      addToWishList(item);
-      form.elements["item"].value = "";
-    }
-  });
-
-        
