@@ -27,6 +27,7 @@ function SlideShow(n) {
   circles[slidePosition-1].className += " enable";
 } 
 
+function sharedButton() {
 // Shared Buttons
   var siteUrl = window.location.href;
   var siteTitle = document.title;
@@ -36,7 +37,7 @@ function SlideShow(n) {
   document.querySelector('#share-buttons .facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(siteUrl);
   document.querySelector('#share-buttons .twitter').href = 'https://twitter.com/share?text=' + encodeURIComponent(siteTitle) + '&url=' + encodeURIComponent(siteUrl) + '&hashtags=' + encodeURIComponent(siteHashtag);
   document.querySelector('#share-buttons .linkedin').href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(siteUrl) + '&title=' + encodeURIComponent(siteTitle) + '&source=' + encodeURIComponent(siteName);
-
+}
 
   var isPlaying = false; // Create a variable to track the audio playback status
 
