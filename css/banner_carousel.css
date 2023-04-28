@@ -1,5 +1,5 @@
 
-/*Carousel code below is taken from Eugiene Kanillar at Section.io > https://www.section.io/engineering-education/how-to-make-an-image-carousel-for-your-website/ 
+/*Carousel core functionality is taken from Eugiene Kanillar at Section.io > https://www.section.io/engineering-education/how-to-make-an-image-carousel-for-your-website/ 
   Then Edited by Esaias Burnette to fit the requirements of the website*/
 
 * {box-sizing:border-box}
@@ -101,17 +101,19 @@
   to {opacity: 2}
 }
 
-/*Carousel code above is taken from Eugiene Kanillar at Section.io > https://www.section.io/engineering-education/how-to-make-an-image-carousel-for-your-website/ 
+/*Carousel core functionality is taken from Eugiene Kanillar at Section.io > https://www.section.io/engineering-education/how-to-make-an-image-carousel-for-your-website/ 
 Then Edited by Esaias Burnette to fit the requirements of the website*/
 
- .banner-container {
+/* Container the Main Banner on each Page */
+.banner-container {
     
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 500px;
   }
-  
+
+/* Image for the Main Banner on each Page */
 .banner-images {
     display: flex;
     width: 300%;

@@ -1,3 +1,4 @@
+/*Body style */
 body {
 	margin: 0;
 	font-family: Arial, sans-serif;
@@ -5,6 +6,7 @@ body {
 	color: #333;
 }
 
+/*Body style */
 header {
 	background-color: #fff;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
@@ -13,6 +15,7 @@ header {
 	justify-content: space-between;
 }
 
+/*Footer style */
 footer {
 	bottom: 0;
 	left: 0;
@@ -23,19 +26,19 @@ footer {
 	text-align: center;
 }
 
-
+/*Logo style */
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  .logo img {
+.logo img {
     max-width: 60%;
     max-height: 60%;
   }
   
-
+/*Nav Bar style */
 nav ul {
 	list-style: none;
 	margin: 0;
@@ -58,8 +61,7 @@ nav a:hover {
     color: #fff;
   }
 
-
-
+/*Paragraph Syle */
 .welcome-p{
 	text-align: center;
 	align-self: center;
@@ -77,6 +79,7 @@ nav a:hover {
 	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+/*Subpage Style */
 .sub-page{
 	text-align: center;
 	align-self: center;
@@ -103,7 +106,6 @@ nav a:hover {
 	line-height: 1.5;
 	color: #333;
 	text-align: left;
-	
 }
 
 .sub-page p{
@@ -111,10 +113,9 @@ nav a:hover {
     padding-left: 120px;
     padding-right: 120px;
 	text-align: justify;
-	
 }
   
-
+/*Layers on the page style */
 .pageLayer {
 	display: flex;
 	align-items: center;
@@ -133,13 +134,11 @@ nav a:hover {
 	margin-right: 50px;
     background-size: cover;
     transition: opacity 0.3s ease-in-out;
-    
 }
 
 .layer-image:hover {
     opacity: 0.8;
   }
-
 
 .layer-image img {
 	max-width: 100%;
@@ -167,6 +166,7 @@ nav a:hover {
     color: #fff;
   }
 
+  /*Word Banner Between Payment style */
 .word-banner {
     background-image: linear-gradient(to right, #e2cf9f, #ae965b);
     color: #09867c;
@@ -178,18 +178,18 @@ nav a:hover {
     margin: 0;
   }
 
-
-  .share {
-        text-align: center;
-        align-self: center;
-        margin: 0;
-        padding: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        color: #333;
-        text-align: center;
-        margin: 2rem auto;
-        max-width: 80%;
+/*Share Button styles */
+.share {
+    text-align: center;
+    align-self: center;
+    margin: 0;
+	padding: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 80%;
        
   }
   #share-buttons {
@@ -212,23 +212,3 @@ nav a:hover {
   #share-buttons a:hover {
     background-color: #2d4373;
   }
-
-
-
-
-.sub-page-cookbook ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.sub-page-cookbook li {
-	padding: 10px;
-	border-bottom: 1px solid #ccc;
-}
-
-
-
-  
-
-
