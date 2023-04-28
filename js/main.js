@@ -11,6 +11,7 @@ function currentSlide(n) {
   SlideShow(slidePosition = n);
 }
 
+// Slide show 
 function SlideShow(n) {
   var i;
   var slides = document.getElementsByClassName("Containers");
@@ -27,8 +28,8 @@ function SlideShow(n) {
   circles[slidePosition-1].className += " enable";
 } 
 
+// Shared Buttons to external link
 function sharedButton() {
-// Shared Buttons
   var siteUrl = window.location.href;
   var siteTitle = document.title;
   var siteName = "The Dominican Foodie"; // Replace with your site name
@@ -39,29 +40,29 @@ function sharedButton() {
   document.querySelector('#share-buttons .linkedin').href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(siteUrl) + '&title=' + encodeURIComponent(siteTitle) + '&source=' + encodeURIComponent(siteName);
 }
 
-  var isPlaying = false; // Create a variable to track the audio playback status
+var isPlaying = false; // Create a variable to track the audio playback status
 
-		function toggleAudio() {
-			// Get the audio element by its id
-			var audio = document.getElementById("myAudio");
+function toggleAudio() {
+		// Get the audio element by its id
+		var audio = document.getElementById("myAudio");
 
-            // Get the image element by its id for each slider
-			var img1 = document.getElementById("audio-icon1");
-            var img2 = document.getElementById("audio-icon2");
-            var img3 = document.getElementById("audio-icon3");
+    // Get the image element by its id for each slider
+		var img1 = document.getElementById("audio-icon1");
+        var img2 = document.getElementById("audio-icon2");
+        var img3 = document.getElementById("audio-icon3");
 
-			// Toggle the audio playback status and update the icon for each slider
-			if (isPlaying) {
-				audio.pause();
-				isPlaying = false;
-				img1.src = 'img/audio.png'; // Change the image to show the play icon
-                img2.src = 'img/audio.png'; // Change the image to show the pause icon
-                img3.src = 'img/audio.png'; // Change the image to show the pause icon
-			} else {
-				audio.play();
-				isPlaying = true;
-				img1.src = 'img/pause.png'; // Change the image to show the pause icon
-                img2.src = 'img/pause.png'; // Change the image to show the pause icon
-                img3.src = 'img/pause.png'; // Change the image to show the pause icon
+		// Toggle the audio playback status and update the icon for each slider
+		if (isPlaying) {
+			audio.pause();
+			isPlaying = false;
+			img1.src = 'img/audio.png'; // Change the image to show the play icon
+              img2.src = 'img/audio.png'; // Change the image to show the pause icon
+              img3.src = 'img/audio.png'; // Change the image to show the pause icon
+		} else {
+			audio.play();
+			isPlaying = true;
+			img1.src = 'img/pause.png'; // Change the image to show the pause icon
+            img2.src = 'img/pause.png'; // Change the image to show the pause icon
+             img3.src = 'img/pause.png'; // Change the image to show the pause icon
 			}
 		}
