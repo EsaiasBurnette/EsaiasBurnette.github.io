@@ -114,6 +114,15 @@ nav a:hover {
     padding-right: 120px;
 	text-align: justify;
 }
+
+.sub-page img{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	width: 70%;
+    height: 70%;
+	object-fit: cover;
+}
   
 /*Layers on the page style */
 .pageLayer {
